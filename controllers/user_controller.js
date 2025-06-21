@@ -46,7 +46,7 @@ async function createAccount(req, res) {
 
         // await sendEmail(email, otp);
 
-        res.status(201).json(user);
+        res.status(201).json({name, email, phone, role, nwePassword});
 
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
