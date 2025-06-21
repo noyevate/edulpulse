@@ -3,15 +3,15 @@ const app = express();
 const port = process.env.PORT || 8500;
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const UserRoute = require("../routes/user_routes");
-const StudentRoute = require("../routes/student_routes");
-const AttendanceRoute = require("../routes/attendance_route")
-const BookRoute = require("../routes/book_route");
-const TimetableRoute = require("../routes/timetabe_route");
-const FeeDetails = require("../routes/fee_route");
-const Holiday = require("../routes/holiday_route");
-const Event = require("../routes/event_route");
-const Behaviour = require("../routes/behaviour_route")
+const UserRoute = require("./routes/user_routes");
+const StudentRoute = require("./routes/student_routes");
+const AttendanceRoute = require("./routes/attendance_route")
+const BookRoute = require("./routes/book_route");
+const TimetableRoute = require("./routes/timetabe_route");
+const FeeDetails = require("./routes/fee_route");
+const Holiday = require("./routes/holiday_route");
+const Event = require("./routes/event_route");
+const Behaviour = require("./routes/behaviour_route")
 
 dotenv.config();
 
