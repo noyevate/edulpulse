@@ -40,24 +40,13 @@ async function createAccount(req, res) {
             phone,
             role,
             password: nwePassword,
-            otp: otp,
-            otpExpires: Date.now() + 10 * 60 * 1000 // OTP valid for 10 minutes
         });
 
         await user.save();
 
         // await sendEmail(email, otp);
 
-        res.status(201).json({
-            status: true,
-            message: 'Account created. Verify your phone number.',
-            user: {
-                id: user._id,
-                email: user.email,
-                password: user.password,
-                email: user.email
-            }
-        });
+        res.status(201).json(user);
 
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
