@@ -35,6 +35,7 @@ async function createAccount(req, res) {
         const otp = generateOTP();
 
         const user = new User({
+
             name,
             email,
             phone,
@@ -46,7 +47,7 @@ async function createAccount(req, res) {
 
         // await sendEmail(email, otp);
 
-        res.status(201).json({name, email, phone, role, password});
+        res.status(201).json({ name, email, phone, role, password});
 
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
@@ -97,7 +98,7 @@ async function loginParent(req, res) {
         );
 
         const { password, otp, createdAt, updatedAt, otpExpires, ...others } = user._doc;
-        res.status(201).json({ ...others, userToken, students: student });
+        res.status(201).json({ ...others, userToken });
     } catch (error) {
         console.error("Login error:", error); // Log login error
         return res.status(500).json({ status: false, message: error.message });
