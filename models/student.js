@@ -11,6 +11,8 @@ const StudentSchema = new mongoose.Schema({
     s_mother_name: {type: String, required:false, default: "non"},
     s_class: {type: String, default:false, },
     s_address: {type: String, required:false, default: "non"},
+    s_img: {type: String, required:false, default: "non"},
+    s_id: {type: String, required:false, default: "non"},
     
 },{
     toJSON: {

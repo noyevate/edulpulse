@@ -11,7 +11,9 @@ async function createStudent(req, res) {
             s_father_name,
             s_mother_name,
             s_class,
-            s_address
+            s_address,
+            s_img,
+            s_id
         } = req.body;
 
         if (!userId || !s_name || !s_dob) {
@@ -28,6 +30,8 @@ async function createStudent(req, res) {
             s_mother_name,
             s_class,
             s_address,
+            s_img,
+            s_id
         });
 
         res.status(201).json(
