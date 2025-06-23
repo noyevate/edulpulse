@@ -98,7 +98,7 @@ async function loginParent(req, res) {
         );
 
         const { password, otp, createdAt, updatedAt, otpExpires, ...others } = user._doc;
-        res.status(201).json({ ...others, userToken });
+        res.status(201).json({ ...others, userToken, student });
     } catch (error) {
         console.error("Login error:", error); // Log login error
         return res.status(500).json({ status: false, message: error.message });
