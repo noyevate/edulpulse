@@ -36,7 +36,7 @@ async function createEvent (req, res) {
 
 async function getSchoolEvents (req, res) {
   try {
-    const events = await UpcomingEvent.find();
+    const events = await UpcomingEvent.find({ isPublished: true });
     if (!events || events.length === 0) {
       return res.status(404).json({ message: "No events found" });
     }
