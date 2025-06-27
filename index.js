@@ -11,7 +11,8 @@ const TimetableRoute = require("./routes/timetabe_route");
 const FeeDetails = require("./routes/fee_route");
 const Holiday = require("./routes/holiday_route");
 const Event = require("./routes/event_route");
-const Behaviour = require("./routes/behaviour_route")
+const Behaviour = require("./routes/behaviour_route");
+const Result = require("./routes/result_route")
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ app.use('/feeDetails', FeeDetails);
 app.use('/holiday', Holiday);
 app.use('/event', Event);
 app.use('/behaviour', Behaviour);
+app.use('/result', Result);
 
 app.listen(port, () => console.log(`NedMedPro backend services is running on port: ${port}`))
 
