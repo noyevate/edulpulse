@@ -34,11 +34,11 @@ async function createEvent (req, res) {
   }
 };
 
-async function getSchoolEvents (re, res) {
+async function getSchoolEvents (req, res) {
   try {
-    const events = UpcomingEvent.find();
-    if (!events) {
-      return res.status(404).json({ message: "Event not found" });
+    const events = await UpcomingEvent.find();
+    if (!events || events.length === 0) {
+      return res.status(404).json({ message: "No events found" });
     }
     res.status(200).json(events);
   } catch (error) {
