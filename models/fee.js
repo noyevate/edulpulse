@@ -42,4 +42,4 @@ const FeeDetailsSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('FeeDetails', FeeDetailsSchema);
+module.exports = mongoose.model( 'FeeDetails', FeeDetailsSchema );

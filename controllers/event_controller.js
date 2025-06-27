@@ -34,6 +34,20 @@ async function createEvent (req, res) {
   }
 };
 
+async function getSchoolEvents (re, res) {
+  try {
+    const events = UpcomingEvent.find();
+    if (!events) {
+      return res.status(404).json({ message: "Event not found" });
+    }
+    res.status(200).json(events);
+  } catch (error) {
+    console.error("Error in fetching event:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+
+}
+
 async function updateEventById (req, res) {
   try {
     const { id } = req.params;
@@ -76,4 +90,5 @@ module.exports = {
   createEvent,
   updateEventById,
   deleteEventById,
+  getSchoolEvents
 };

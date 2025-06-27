@@ -27,7 +27,7 @@ async function getStudentAttendance(req, res) {
 
     const records = await Attendance.find({ student: studentId });
 
-    res.status(200).json(records );
+    res.status(200).json(records);
   } catch (error) {
     console.error("Error fetching attendance:", error);
     res.status(500).json({ success: false, message: "Server Error" });
