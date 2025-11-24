@@ -8,7 +8,7 @@ const TimetableSchema = new mongoose.Schema(
       type: String,
       required: true,
       enum: [
-        'JSS_1', 'JSS_2', 'JSS_3', 'SS_1', 'SS_2', 'SS_3',
+        '100L', '200L', '300L', '400L', '500L', '600L',
       ],
     },
     day: {
