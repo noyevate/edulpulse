@@ -5,15 +5,13 @@ const FeeDetailsSchema = new mongoose.Schema(
     gradeLevel: {
       type: String,
       enum: [
-        'JSS_1', 'JSS_2', 'JSS_3', 'SS_1', 'SS_2', 'SS_3',
+        '100', '200', '300', '400', '500', '600',
       ],
       required: true
     },
-    term: {
-      type: String,
-      enum: ['first_term', 'second_term', 'third_term'],
-      required: true
-    },
+    term: 
+      { type: String, required: true, enum: [ '1semester', '2semester'] },
+    
     amount: {
       type: Number,
       required: true

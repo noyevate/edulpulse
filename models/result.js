@@ -12,8 +12,8 @@ const SubjectResultSchema = new mongoose.Schema({
 const ResultSchema = new mongoose.Schema({
   studentId: { type: String, required: true },
   fullName: { type: String, required: true },
-  gradeLevel: { type: String, required: true }, // e.g. 'JSS_2'
-  term: { type: String, required: true, enum: ['1st', '2nd', '3rd'] },
+  gradeLevel: { type: String, required: true }, 
+  term: { type: String, required: true, enum: [ '1semester', '2semester'] },
   session: { type: String, required: true }, // e.g. '2024/2025'
   subjects: [SubjectResultSchema], // Array of subject result objects
   average: { type: Number, required: true },
